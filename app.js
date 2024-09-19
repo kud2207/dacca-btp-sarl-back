@@ -1,5 +1,8 @@
 const express = require('express')
 const bodyPaeser = require('body-parser')
+const adminPrincipal = require('./routes/admin-principalRoutes')
+const cors = require('cors')
+
 require('dotenv').config()
 const app = express()
 
@@ -7,20 +10,14 @@ const app = express()
 //midelware
 app.use(bodyPaeser.json())
 app.use(bodyPaeser.urlencoded({ extended: false }))
+app.use(cors())
 
-const auth = (req, res, next)=>{
-    if(req.query.nom !== 'ulrich')
-        return res.status(401).send('Incorect')
-    return next()
-}
-
-app.get('/:id', auth, (req, res)=>{
-    const id = req.params.id
-    res.send(id)
-})
+//diff routes
+app.use('/login',adminPrincipal)
 
 
-const port = process.env.PORT
+
+const port = process.env.PORT || 8080
 app.listen(port, ()=>{
     console.log('listening on port:', port)
-})
+}) 
