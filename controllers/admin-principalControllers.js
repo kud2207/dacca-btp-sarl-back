@@ -40,7 +40,7 @@ const loginAdminPrinc = async (req, res) => {
 
 //Recuperer les date
 const dataAdmin = (req , res)=>{
-  res.send(req.dataAdmin)
+  res.send(req.adim)
 }
 
 
