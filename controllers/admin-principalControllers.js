@@ -6,7 +6,7 @@ const user = adminPrincipalSchema[0]
 const email = process.env.GMAIL_ADMIN1;
 const password = process.env.PWD_ADMIN1;
 const clesAdm = process.env.ACCESS_TOKEN_SECRET;
-const timExp = "3000s";
+const timExp = "7m";
 
 //Login
 const loginAdminPrinc = async (req, res) => {
@@ -40,7 +40,7 @@ const loginAdminPrinc = async (req, res) => {
 
 //Recuperer les date
 const dataAdmin = (req , res)=>{
-  res.send(req.adim)
+  res.send(req.user)
 }
 
 

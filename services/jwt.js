@@ -6,4 +6,4 @@ const generateAccessToken = (data, cles, time)=>{
 
 module.exports={
     generateAccessToken
-}
+} 

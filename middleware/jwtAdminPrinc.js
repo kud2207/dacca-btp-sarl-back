@@ -8,11 +8,11 @@ const authenticateToken = (req, res, next) => {
   const token = authHeader && authHeader.split(" ")[1];
   try {
     if (token == null) return res.sendStatus(401);
-    jwt.verify(token, clesAdm, (err, adim) => {
+    jwt.verify(token, clesAdm, (err, user) => {
       if (err) {
         return res.sendStatus(401);
       }
-      req.adim = adim;
+      req.user = user;
       next();
     });
   } catch (error) {console.log("erreur suite a authenticateToken", error)}

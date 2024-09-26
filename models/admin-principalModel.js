@@ -12,4 +12,4 @@ const adminPrincipalSchema = [
  
 module.exports={
     adminPrincipalSchema
-}
+} 
