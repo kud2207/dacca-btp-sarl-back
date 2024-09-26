@@ -4,6 +4,7 @@ const adminPrincipal = require('./routes/admin-principalRoutes')
 const cors = require('cors')
 const connectMongoDB = require('./config/dataBase')
 const serviceRoute = require('./routes/services-routes')
+const realisationRoute = require('./routes/realisations-routes')
 
 require('dotenv').config()
 const app = express()
@@ -20,6 +21,7 @@ app.use(cors())
 //diff routes
 app.use('/login',adminPrincipal)
 app.use('/service',serviceRoute)
+app.use('/realisation', realisationRoute)
 
 
 
